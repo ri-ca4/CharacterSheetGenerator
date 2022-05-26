@@ -32,7 +32,16 @@ const personality = ['bold', 'shy', 'quiet', 'serious', 'modest', 'brave', 'quir
                     'loyal', 'humble', 'responsible', 'combative', 'witty', 'simple minded', 'bright', 
                     'impulsive', 'compassionate', 'leader', 'hard-working'];
 
-function statRoll (){
-
+function statRoll (){//simulates rolling 4 d6, dropping lowest, and adding the remaining
+    let rolls = [];
+    for(i=1; i<=4; i++){//roll the dice
+        rolls.push(Math.floor(Math.random() * 6) + 1)
+    }
+    rolls.sort(function(a, b){return b - a});//sort the dice
+    rolls.pop();//drop the lowest
+    var stat = rolls.reduce(function (a, b) {//add the remaining
+        return a + b;
+      }, 0);
+    return stat
 }
 

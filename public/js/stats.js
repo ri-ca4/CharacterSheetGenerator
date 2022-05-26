@@ -8,14 +8,14 @@ const dnd = {
         'Wizard', 'Artificer', 'Blood Hunter']
 }
 
-const wow = {
-    races: [],
-    classes: []
-}
+// const wow = {
+//     races: [],
+//     classes: []
+// }
 
 const genders = ['Male', 'Female', 'Non-binary'];
 
-const alignment = [
+const alignments = [
     ['Lawful', 'Neutral', 'Chaotic'],
     ['Good', 'Neutral', 'Evil'] 
 ];
@@ -28,13 +28,13 @@ const motivations = ['revenge', 'power', 'money', 'healing', 'justice', 'enterta
 const flaws = ['gullible', 'clumbsy', 'lazy', 'naive', 'pride', 'stubborn', 'anxious', 'apathetic', 'ignorant',
                 'hot-headed', 'obsessive', 'distractable', 'arrogant', 'forgetful', 'compulsive liar'];
 
-const personality = ['bold', 'shy', 'quiet', 'serious', 'modest', 'brave', 'quirky', 'careful', 'honest', 
+const personalities = ['bold', 'shy', 'quiet', 'serious', 'modest', 'brave', 'quirky', 'careful', 'honest', 
                     'loyal', 'humble', 'responsible', 'combative', 'witty', 'simple minded', 'bright', 
                     'impulsive', 'compassionate', 'leader', 'hard-working'];
 
 function statRoll (){//simulates rolling 4 d6, dropping lowest, and adding the remaining
     let rolls = [];
-    for(i=1; i<=4; i++){//roll the dice
+    for(let i=1; i<=4; i++){//roll the dice
         rolls.push(Math.floor(Math.random() * 6) + 1)
     }
     rolls.sort(function(a, b){return b - a});//sort the dice
@@ -45,3 +45,4 @@ function statRoll (){//simulates rolling 4 d6, dropping lowest, and adding the r
     return stat
 }
 
+export {dnd, genders, alignments, motivations, flaws, personalities, statRoll}

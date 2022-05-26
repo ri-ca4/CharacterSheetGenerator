@@ -1,5 +1,7 @@
 import { dnd, genders, alignments, motivations, flaws, personalities, statRoll } from "./stats.js"
 
+
+//roll for ... functions
 function rollForRace(){
     var races = dnd.races;
     var rand = Math.floor(Math.random() * races.length);
@@ -58,13 +60,46 @@ function rollForStats(){
     return stats
 }
 
-document.getElementById('data').innerHTML = rollForAlignment() + ' ' +
-                                            rollForRace() + ' ' + rollForClass()
-                                            + ' ' + rollForGender()
-                                            + ' ' + rollForMotive()
-                                            + ' ' + rollForFlaw()
-                                            + ' ' + rollForPersonality();
+//create character class
+class Character {
+    constructor(){
+    this.race = rollForRace(),
+    this.class = rollForClass(),
+    this.gender = rollForGender(),
+    this.align = rollForAlignment(),
+    this.motive = rollForMotive(),
+    this.flaw = rollForFlaw(),
+    this.person = rollForPersonality(),
+    this.stats = rollForStats()
+    }
+}
 
-var test = rollForStats();
-document.getElementById('stats').innerHTML = test.Str+' '+test.Dex+' '+test.Con+' '+
-                                             test.Int+' '+test.Wis+' '+test.Chr;
+function generate(){//generate new character and display
+//New character
+    var char = new Character;
+
+//Display in DOM
+    document.getElementById('race').innerHTML = char.race;
+    document.getElementById('class').innerHTML = char.class;
+    document.getElementById('gender').innerHTML = char.gender;
+    document.getElementById('align').innerHTML = char.align;
+    document.getElementById('motive').innerHTML = char.motive;
+    document.getElementById('flaw').innerHTML = char.flaw;
+    document.getElementById('person').innerHTML = char.person;
+
+    document.getElementById('str').innerHTML = char.stats.Str;
+    document.getElementById('dex').innerHTML = char.stats.Dex;
+    document.getElementById('con').innerHTML =  char.stats.Con;
+    document.getElementById('int').innerHTML = char.stats.Int;
+    document.getElementById('wis').innerHTML = char.stats.Wis;
+    document.getElementById('chr').innerHTML = char.stats.Chr;
+}
+
+generate();
+//Event listener
+let generateBtn = document.getElementById('generate');
+generateBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    generate();
+});
+

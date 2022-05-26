@@ -21,7 +21,12 @@ function rollForGender(){
 }
 
 function rollForAlignment(){
-
+    var rand1 = Math.floor(Math.random() * 3)
+    var rand2 = Math.floor(Math.random() * 3)
+    var align1 = alignments[0][rand1];
+    var align2 = alignments[1][rand2];
+    var alignment = align1 + ' ' + align2;
+    return alignment
 }
 
 function rollForMotive(){
@@ -53,7 +58,8 @@ function rollForStats(){
     return stats
 }
 
-document.getElementById('data').innerHTML = rollForRace() + ' ' + rollForClass()
+document.getElementById('data').innerHTML = rollForAlignment() + ' ' +
+                                            rollForRace() + ' ' + rollForClass()
                                             + ' ' + rollForGender()
                                             + ' ' + rollForMotive()
                                             + ' ' + rollForFlaw()

@@ -6,6 +6,7 @@ const dnd = {
     classes: ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 
         'Monk', 'Palidin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 
         'Wizard', 'Artificer', 'Blood Hunter']
+
 }
 
 // const wow = {
@@ -20,17 +21,17 @@ const alignments = [
     ['Good', 'Neutral', 'Evil'] 
 ];
 
-const motivations = ['revenge', 'power', 'money', 'healing', 'justice', 'entertainment',
-                     'love', 'adventure', 'education', 'respect', 'redemption', 'boredom',
-                     'curiosity', 'lust', 'anarchy', 'rebellion', 'survival', 'courage', 
-                     'glory', 'honor'];
+const motivations = ['Revenge', 'Power', 'Money', 'Healing', 'Justice', 'Entertainment',
+                     'Love', 'Adventure', 'Education', 'Respect', 'Redemption', 'Boredom',
+                     'Curiosity', 'Lust', 'Anarchy', 'Rebellion', 'Survival', 'Courage', 
+                     'Glory', 'Honor'];
 
-const flaws = ['gullible', 'clumbsy', 'lazy', 'naive', 'pride', 'stubborn', 'anxious', 'apathetic', 'ignorant',
-                'hot-headed', 'obsessive', 'distractable', 'arrogant', 'forgetful', 'compulsive liar'];
+const flaws = ['Gullible', 'Clumbsy', 'Lazy', 'Naive', 'Pride', 'Stubborn', 'Anxious', 'Apathetic', 'Ignorant',
+                'Hot-headed', 'Obsessive', 'Distractable', 'Arrogant', 'Forgetful', 'Compulsive Liar'];
 
-const personalities = ['bold', 'shy', 'quiet', 'serious', 'modest', 'brave', 'quirky', 'careful', 'honest', 
-                    'loyal', 'humble', 'responsible', 'combative', 'witty', 'simple minded', 'bright', 
-                    'impulsive', 'compassionate', 'leader', 'hard-working'];
+const personalities = ['Bold', 'Shy', 'Quiet', 'Serious', 'Modest', 'Brave', 'Quirky', 'Careful', 'Honest', 
+                    'Loyal', 'Humble', 'Responsible', 'Combative', 'Witty', 'Simple Minded', 'Bright', 
+                    'Impulsive', 'Compassionate', 'Leader', 'Hard-working'];
 
 function statRoll (){//simulates rolling 4 d6, dropping lowest, and adding the remaining
     let rolls = [];

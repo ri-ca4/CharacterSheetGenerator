@@ -28,6 +28,9 @@ function rollForAlignment(){
     var align1 = alignments[0][rand1];
     var align2 = alignments[1][rand2];
     var alignment = align1 + ' ' + align2;
+    if(alignment == 'Neutral Neutral'){
+        alignment = 'True Neutral'
+    }
     return alignment
 }
 
@@ -51,26 +54,26 @@ function rollForPersonality(){
 
 function rollForStats(){
     var stats = {};
-    stats.Str = statRoll();
-    stats.Dex = statRoll();
-    stats.Con = statRoll();
-    stats.Int = statRoll();
-    stats.Wis = statRoll();
-    stats.Chr = statRoll();
+    stats.str = statRoll();
+    stats.dex = statRoll();
+    stats.con = statRoll();
+    stats.int = statRoll();
+    stats.wis = statRoll();
+    stats.chr = statRoll();
     return stats
 }
 
 //create character class
 class Character {
     constructor(){
-    this.race = rollForRace(),
-    this.class = rollForClass(),
-    this.gender = rollForGender(),
-    this.align = rollForAlignment(),
-    this.motive = rollForMotive(),
-    this.flaw = rollForFlaw(),
-    this.person = rollForPersonality(),
-    this.stats = rollForStats()
+        this.race = rollForRace(),
+        this.class = rollForClass(),
+        this.gender = rollForGender(),
+        this.align = rollForAlignment(),
+        this.motive = rollForMotive(),
+        this.flaw = rollForFlaw(),
+        this.person = rollForPersonality(),
+        this.stats = rollForStats()
     }
 }
 
@@ -87,12 +90,12 @@ function generate(){//generate new character and display
     document.getElementById('flaw').innerHTML = char.flaw;
     document.getElementById('person').innerHTML = char.person;
 
-    document.getElementById('str').innerHTML = char.stats.Str;
-    document.getElementById('dex').innerHTML = char.stats.Dex;
-    document.getElementById('con').innerHTML =  char.stats.Con;
-    document.getElementById('int').innerHTML = char.stats.Int;
-    document.getElementById('wis').innerHTML = char.stats.Wis;
-    document.getElementById('chr').innerHTML = char.stats.Chr;
+    document.getElementById('str').innerHTML = char.stats.str;
+    document.getElementById('dex').innerHTML = char.stats.dex;
+    document.getElementById('con').innerHTML =  char.stats.con;
+    document.getElementById('int').innerHTML = char.stats.int;
+    document.getElementById('wis').innerHTML = char.stats.wis;
+    document.getElementById('chr').innerHTML = char.stats.chr;
 }
 
 generate();

@@ -7,46 +7,66 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Stats Generator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <table id="character">
-            <tr><td>Race:</td>
-                <td id="race"></td></tr>
-            <tr><td>Class:</td>
-                <td id="class"></td></tr>
-            <tr><td>Gender:</td>
-                <td id="gender"></td></tr>
-            <tr><td>Alignment:</td>
-                <td id="align"></td></tr>
-            <tr><td>Motive:</td>
-                <td id="motive"></td></tr>
-            <tr><td>Flaw:</td>
-                <td id="flaw"></td></tr>
-            <tr><td>Personality:</td>
-                <td id="person"></td></tr>
-        </table>
-        <table id="stats">
-            <tr><td>Strength:</td>
-                <td id="str"></td></tr>
-            <tr><td>Dexterity:</td>
-                <td id="dex"></td></tr>
-            <tr><td>Constitution:</td>
-                <td id="con"></td></tr>
-            <tr><td>Intelligence:</td>
-                <td id="int"></td></tr>
-            <tr><td>Wisdom:</td>
-                <td id="wis"></td></tr>
-            <tr><td>Charisma:</td>
-                <td id="chr"></td></tr>
-        </table>
-        <button id="generate">Generate New</button>
+        <div class="container">
+
+            <table id="character">
+
+                <tr><td class="label">Race:</td>
+                    <td id="race" class="stat"></td></tr>
+
+                <tr><td class="label">Class:</td>
+                    <td id="class" class="stat"></td></tr>
+
+                <tr><td class="label">Gender:</td>
+                    <td id="gender" class="stat"></td></tr>
+
+                <tr><td class="label">Alignment:</td>
+                    <td id="align" class="stat"></td></tr>
+
+                <tr><td class="label">Motive:</td>
+                    <td id="motive" class="stat"></td></tr>
+
+                <tr><td class="label">Flaw:</td>
+                    <td id="flaw" class="stat"></td></tr>
+
+                <tr><td class="label">Personality:</td>
+                    <td id="person" class="stat"></td></tr>
+
+                <tr><td class="label">Strength:</td>
+                    <td id="str" class="stat"></td></tr>
+
+                <tr><td class="label">Dexterity:</td>
+                    <td id="dex" class="stat"></td></tr>
+
+                <tr><td class="label">Constitution:</td>
+                    <td id="con" class="stat"></td></tr>
+
+                <tr><td class="label">Intelligence:</td>
+                    <td id="int" class="stat"></td></tr>
+
+                <tr><td class="label">Wisdom:</td>
+                    <td id="wis" class="stat"></td></tr>
+
+                <tr><td class="label">Charisma:</td>
+                    <td id="chr" class="stat"></td></tr>
+
+            </table>
+
+            <button id="generate">Generate New</button>
+
+        </div>
 
         <script type="module" src="js/stats.js" async defer></script>
         <script type="module" src="js/app.js" async defer></script>

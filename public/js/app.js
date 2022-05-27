@@ -1,5 +1,7 @@
 import { dnd, genders, alignments, motivations, flaws, personalities, statRoll } from "./stats.js"
 
+
+//roll for ... functions
 function rollForRace(){
     var races = dnd.races;
     var rand = Math.floor(Math.random() * races.length);
@@ -21,7 +23,15 @@ function rollForGender(){
 }
 
 function rollForAlignment(){
-
+    var rand1 = Math.floor(Math.random() * 3)
+    var rand2 = Math.floor(Math.random() * 3)
+    var align1 = alignments[0][rand1];
+    var align2 = alignments[1][rand2];
+    var alignment = align1 + ' ' + align2;
+    if(alignment == 'Neutral Neutral'){
+        alignment = 'True Neutral'
+    }
+    return alignment
 }
 
 function rollForMotive(){
@@ -44,21 +54,55 @@ function rollForPersonality(){
 
 function rollForStats(){
     var stats = {};
-    stats.Str = statRoll();
-    stats.Dex = statRoll();
-    stats.Con = statRoll();
-    stats.Int = statRoll();
-    stats.Wis = statRoll();
-    stats.Chr = statRoll();
+    stats.str = statRoll();
+    stats.dex = statRoll();
+    stats.con = statRoll();
+    stats.int = statRoll();
+    stats.wis = statRoll();
+    stats.chr = statRoll();
     return stats
 }
 
-document.getElementById('data').innerHTML = rollForRace() + ' ' + rollForClass()
-                                            + ' ' + rollForGender()
-                                            + ' ' + rollForMotive()
-                                            + ' ' + rollForFlaw()
-                                            + ' ' + rollForPersonality();
+//create character class
+class Character {
+    constructor(){
+        this.race = rollForRace(),
+        this.class = rollForClass(),
+        this.gender = rollForGender(),
+        this.align = rollForAlignment(),
+        this.motive = rollForMotive(),
+        this.flaw = rollForFlaw(),
+        this.person = rollForPersonality(),
+        this.stats = rollForStats()
+    }
+}
 
-var test = rollForStats();
-document.getElementById('stats').innerHTML = test.Str+' '+test.Dex+' '+test.Con+' '+
-                                             test.Int+' '+test.Wis+' '+test.Chr;
+function generate(){//generate new character and display
+//New character
+    var char = new Character;
+
+//Display in DOM
+    document.getElementById('race').innerHTML = char.race;
+    document.getElementById('class').innerHTML = char.class;
+    document.getElementById('gender').innerHTML = char.gender;
+    document.getElementById('align').innerHTML = char.align;
+    document.getElementById('motive').innerHTML = char.motive;
+    document.getElementById('flaw').innerHTML = char.flaw;
+    document.getElementById('person').innerHTML = char.person;
+
+    document.getElementById('str').innerHTML = char.stats.str;
+    document.getElementById('dex').innerHTML = char.stats.dex;
+    document.getElementById('con').innerHTML =  char.stats.con;
+    document.getElementById('int').innerHTML = char.stats.int;
+    document.getElementById('wis').innerHTML = char.stats.wis;
+    document.getElementById('chr').innerHTML = char.stats.chr;
+}
+
+generate();
+//Event listener
+let generateBtn = document.getElementById('generate');
+generateBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    generate();
+});
+

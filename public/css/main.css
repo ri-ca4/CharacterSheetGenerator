@@ -61,6 +61,11 @@ button{
     padding: 1vh;
 }
 
+#input{
+    background-color: #ffffff70;
+    text-align: center;
+}
+
 
 
 @media screen and (min-width: 600px){

@@ -63,9 +63,23 @@
                     <td id="chr" class="stat"></td></tr>
 
             </table>
-
-            <button id="generate">Generate New</button>
-
+            <div id="input">
+                <div id="choose">
+                    <h3>Choose your Game:</h3>
+                    <div id="radios">
+                        <div class="radio-group">
+                            <input type="radio" name="choose" id="dnd" value="dnd" checked/>
+                            <label for="dnd">D&D</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="choose" id="wow" value="wow"/>
+                            <label for="wow">WoW</label>
+                        </div>
+                    </div>
+                </div>
+            
+                <button id="generate">Generate New</button>
+            </div>    
         </div>
 
         <script type="module" src="js/stats.js" async defer></script>
